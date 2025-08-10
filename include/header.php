@@ -28,9 +28,9 @@
         <div>
           <a href="index.php">Home</a>
           <a href="aboutUs.php">About</a>
-          <a href="index.html">Schedule</a>
-          <a href="faqs.php">FAQs</a>
-          <a href="index.html">Resources</a>
+          <a href="schedule.php">Schedule</a>
+          <a href="faqs.php">FAQs</a>   
+          <a href="administration.php">Administration</a>
         </div>
         <button class="login-btn"><a href="login.php" class="login-btn">Login</a>
 </button>
