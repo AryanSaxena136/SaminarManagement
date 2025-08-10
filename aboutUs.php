@@ -1,7 +1,398 @@
-<?php
-include('include/header.php');
-?>
-<section class="topics">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seminar Course</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        .logo-image {
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .logo-setting {
+            width: 100px;
+        }
+
+        .line {
+            margin-top: 30px;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #a93226;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+
+        .navbar .login-btn {
+            background-color: white;
+            color: #a93226;
+            padding: 6px 14px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* .content{
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      margin: 40px;
+      border-radius: 10px
+    } */
+        /* .vision-section {
+  background-color: #e0f7fa; pastel blue
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.vision-text {
+  flex: 1;
+}
+
+.vision-text h1 {
+  font-size: 2.5rem;
+  color: #004d40; deep teal for contrast
+  margin-bottom: 20px;
+}
+
+.vision-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.vision-image {
+  flex: 1;
+}
+
+.vision-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.vision-image img:hover {
+  transform: scale(1.05);
+} */
+        /* .vision-section {
+  background-color: #f4f4f4; Soft Light Grey
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.vision-text {
+  flex: 1;
+}
+
+.vision-text h1 {
+  font-size: 2.5rem;
+  color: #a93226; Matches your navbar theme
+  margin-bottom: 20px;
+}
+
+.vision-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.vision-image {
+  flex: 1;
+}
+
+.vision-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.vision-image img:hover {
+  transform: scale(1.05);
+} */
+        .vision-section {
+            background-color: #dcdcdc;
+            /* Slate Grey */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .vision-text {
+            flex: 1;
+        }
+
+        .vision-text h2 {
+            font-size: 2.5rem;
+            color: #a93226;
+            /* Your red theme color */
+            margin-bottom: 20px;
+        }
+
+        .vision-text p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+            /* Strong readable text */
+        }
+
+        .vision-image {
+            flex: 1;
+        }
+
+        .vision-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .vision-image img:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .vision-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            .vision-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            .vision-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+            }
+        }
+
+
+        .intro-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            gap: 30px;
+
+        }
+
+        .intro-text {
+            flex: 1;
+        }
+
+        .intro-text h2 {
+            font-size: 2.5rem;
+            color: #a93226;
+            margin-bottom: 20px;
+        }
+
+        .intro-text p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .intro-image {
+            flex: 1;
+        }
+
+        .intro-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .intro-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .topics {
+            justify-content: space-between;
+            /* padding:  35px; */
+            gap: 30px;
+        }
+
+        .benefits {
+            font-family: "Mallory", Verdana, Arial, Helvetica, sans-serif;
+            font-size: 25px;
+            margin-top: 0px;
+            text-align: center;
+        }
+
+        .footer {
+            background-color: #a93226;
+            /* Dark background */
+            color: white;
+            padding: 30px;
+        }
+
+        .footer h5 {
+            margin: 0 0 10px;
+            margin-left: 500px;
+        }
+
+        .social-icons a {
+            margin: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .social-icons {
+            margin-left: 520px;
+        }
+
+
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .intro-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+                margin: 20px;
+            }
+        }
+
+        .carousel-inner img {
+            height: 350px;
+            /* Adjust this as needed, current full might be ~500px */
+            object-fit: cover;
+        }
+
+        .carousel-caption-bottom-left {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* semi-transparent black */
+            padding: 10px 15px;
+            border-radius: 5px;
+            max-width: 60%;
+        }
+
+        .static-caption-bottom-left {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            /* background-color: rgba(0, 0, 0, 0.5); translucent black */
+            padding: 12px 20px;
+            border-radius: 8px;
+            z-index: 10;
+            max-width: 60%;
+        }
+
+        .static-caption-bottom-left h5 {
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .static-caption-bottom-left p {
+            margin: 5px 0 0;
+            font-size: 1rem;
+        }
+
+
+        /* .carousel-caption-bottom-left h5 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.carousel-caption-bottom-left p {
+  margin: 5px 0 0;
+  font-size: 0.95rem;
+} */
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo-image">
+            <a href="index.php"><img src="assets/images/skit_logo.png" class="logo-setting"></a>
+        </div>
+
+        <!-- Navbar -->
+        <div class="line">
+            <div class="navbar">
+                <div>
+                    <a href="index.php">Home</a>
+                    <a href="aboutUs.php">About</a>
+                    <a href="schedule.php">Schedule</a>
+                    <a href="faqs.php">FAQs</a>
+                    <a href="administration.php">Administration</a>
+                </div>
+                <button class="login-btn">
+                    <?php if(isset($_SESSION['user_id'])): ?>
+                    <a href="logout.php" class="login-btn">Logout</a>
+                    <?php else: ?>
+                    <a href="login.php" class="login-btn">Login</a>
+                    <?php endif; ?>
+
+                </button>
+            </div>
+
+        </div>
+        <section class="topics">
             <!-- <div class="benefits">
       <p>What's the benefits</p>
     </div> -->
@@ -174,15 +565,9 @@ include('include/header.php');
                     office, accounts office, hostels, canteen, security services, transport, maintenance section and all
                     other services.
 
-
                 </p>
 
-
-
-
         </section>
-
-
 <?php
 include('include/footer.php');
 ?>
