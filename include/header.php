@@ -13,7 +13,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel='stylesheet' type='text/css' href='assets/css/main.css'>
+  <link rel='stylesheet' type='text/css' href='assets/css/main.css'>
 </head>
 
 <body>
@@ -29,11 +29,17 @@
           <a href="index.php">Home</a>
           <a href="aboutUs.php">About</a>
           <a href="schedule.php">Schedule</a>
-          <a href="faqs.php">FAQs</a>   
+          <a href="faqs.php">FAQs</a>
           <a href="administration.php">Administration</a>
         </div>
-        <button class="login-btn"><a href="login.php" class="login-btn">Login</a>
-</button>
+        <button class="login-btn">
+          <?php if(isset($_SESSION['user_id'])): ?>
+          <a href="logout.php" class="login-btn">Logout</a>
+          <?php else: ?>
+          <a href="login.php" class="login-btn">Login</a>
+          <?php endif; ?>
+
+        </button>
       </div>
 
     </div>

@@ -30,6 +30,10 @@ include('include/header.php');
         
         <div class="tab-pane fade show active" id="student-login">
           <h4 class="form-title">Student Login</h4>
+          <?php if (isset($_SESSION['login_error'])): ?>
+    <div class="alert alert-danger"><?= $_SESSION['login_error'] ?></div>
+    <?php unset($_SESSION['login_error']); ?>
+<?php endif; ?>
           <form action="login-signup/student_login.php" method="POST">
             <div class="mb-3">
               <label class="form-label">College ID</label>
@@ -82,6 +86,10 @@ include('include/header.php');
         
         <div class="tab-pane fade show active" id="teacher-login">
           <h4 class="form-title">Teacher Login</h4>
+          <?php if (isset($_SESSION['login_error'])): ?>
+    <div class="alert alert-danger"><?= $_SESSION['login_error'] ?></div>
+    <?php unset($_SESSION['login_error']); ?>
+<?php endif; ?>
           <form action="login-signup/teacher_login.php" method="POST">
             <div class="mb-3">
               <label class="form-label">Employee ID</label>
